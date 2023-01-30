@@ -1,429 +1,545 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Search</title>
-</head>
-<body>
-
+  </head>
+  <body>
     <h1>Пошук авто</h1>
     <form action="https://fom.in.ua/echo">
-
+      <div>
+        <input
+          id="custom-all"
+          type="radio"
+          value="auto,order_auto,newauto_search"
+          name="indexName"
+          checked="checked"
+        />
+        <label for="custom-all" data-type="radio">Всі</label>
+        <input id="custom-used" type="radio" value="auto" name="indexName" />
+        <label for="custom-used" data-type="radio">Вживані</label>
+        <input
+          id="custom-new"
+          type="radio"
+          value="newauto_search"
+          name="indexName"
+        />
+        <label for="custom-new" data-type="radio">Нові</label>
+        <input
+          id="custom-order"
+          type="radio"
+          value="order_auto"
+          name="indexName"
+        />
+        <label for="custom-order" data-type="radio">Під пригон</label>
+      </div>
+      <!--Тип-->
+      <div>
+        <label>Тип транспорту</label>
         <div>
-            <input id="custom-all" type="radio" value="auto,order_auto,newauto_search" name="indexName" checked="checked">
-            <label for="custom-all" data-type="radio">Всі</label>
-            <input id="custom-used" type="radio" value="auto" name="indexName">
-            <label for="custom-used" data-type="radio">Вживані</label>
-            <input id="custom-new" type="radio" value="newauto_search" name="indexName">
-            <label for="custom-new" data-type="radio">Нові</label>
-            <input id="custom-order" type="radio" value="order_auto" name="indexName">
-            <label for="custom-order" data-type="radio">Під пригон</label> 
+          <select id="at-category" aria-label="Тип транспорту">
+            <option value="0" selected="selected">Всі типи транспорту</option>
+            <option value="1">Легкові</option>
+            <option value="2">Мото</option>
+            <option value="3">Вантажівки</option>
+            <option value="4">Причепи</option>
+            <option value="5">Спецтехніка</option>
+            <option value="6">Сільгосптехніка</option>
+            <option value="7">Автобуси</option>
+            <option value="8">Водний транспорт</option>
+            <option value="9">Повітряний транспорт</option>
+            <option value="10">Автобудинки</option>
+          </select>
         </div>
-    <!--Тип-->
+      </div>
+      <!--Країна-->
+      <div>
+        <label>Країна виробник</label>
         <div>
-            <label>Тип транспорту</label>
-            <div>
-                <select id="at-category" aria-label="Тип транспорту">
-                <option value="0" selected="selected">Всі типи транспорту</option>
-                <option value="1">Легкові</option>
-                <option value="2">Мото</option>
-                <option value="3">Вантажівки</option>
-                <option value="4">Причепи</option>
-                <option value="5">Спецтехніка</option>
-                <option value="6">Сільгосптехніка</option>
-                <option value="7">Автобуси</option>
-                <option value="8">Водний транспорт</option>
-                <option value="9">Повітряний транспорт</option>
-                <option value="10">Автобудинки</option>
-                </select>
-            </div>
+          <select id="at_country" aria-label="Країна виробник">
+            <option value="0" selected="selected">Оберіть країну</option>
+            <option value="1">Японія</option>
+            <option value="2">Франція</option>
+            <option value="3">США</option>
+            <option value="4">Чехія</option>
+            <option value="5">Україна</option>
+            <option value="6">Англія</option>
+            <option value="7">Індія</option>
+            <option value="8">Італія</option>
+            <option value="9">Китай</option>
+            <option value="10">Корея</option>
+            <option value="11">Німеччина</option>
+          </select>
         </div>
-    <!--Країна-->  
+      </div>
+      <!--Марка-->
+      <div>
+        <label>Марка</label>
         <div>
-            <label>Країна виробник</label>
-            <div>
-                <select id="at_country" aria-label="Країна виробник">
-                <option value="0" selected="selected">Оберіть країну</option>
-                <option value="1">Японія</option>
-                <option value="2">Франція</option>
-                <option value="3">США</option>
-                <option value="4">Чехія</option>
-                <option value="5">Україна</option>
-                <option value="6">Англія</option>
-                <option value="7">Індія</option>
-                <option value="8">Італія</option>
-                <option value="9">Китай</option>
-                <option value="10">Корея</option>
-                <option value="11">Німеччина</option>
-                </select>
-            </div>
+          <select id="at_brand" aria-label="Марка">
+            <option value="0" selected="selected">Оберіть марку</option>
+            <option value="1">Acura</option>
+            <option value="2">BMW</option>
+            <option value="3">Citroen</option>
+            <option value="4">Daewoo</option>
+            <option value="5">Lexus</option>
+            <option value="6">Mazda</option>
+            <option value="7">Mercedess-Benz</option>
+            <option value="8">MINI</option>
+            <option value="9">Mitsubishi</option>
+            <option value="10">Opel</option>
+            <option value="11">Peugeot</option>
+            <option value="12">Porsche</option>
+            <option value="13">Renault</option>
+            <option value="14">Rolls-Royce</option>
+            <option value="15">SEAT</option>
+            <option value="16">Skoda</option>
+            <option value="17">Suzuki</option>
+            <option value="18">Tesla</option>
+            <option value="19">Toyota</option>
+          </select>
         </div>
-    <!--Марка-->    
-        <div>
-            <label>Марка</label>
-            <div>
-                <select id="at_brand" aria-label="Марка">
-                    <option value="0" selected="selected">Оберіть марку</option>
-                    <option value="1">Acura</option>
-                    <option value="2">BMW</option>
-                    <option value="3">Citroen</option>
-                    <option value="4">Daewoo</option>
-                    <option value="5">Lexus</option>
-                    <option value="6">Mazda</option>
-                    <option value="7">Mercedess-Benz</option>
-                    <option value="8">MINI</option>
-                    <option value="9">Mitsubishi</option>
-                    <option value="10">Opel</option>
-                    <option value="11">Peugeot</option>
-                    <option value="12">Porsche</option>
-                    <option value="13">Renault</option>
-                    <option value="14">Rolls-Royce</option>
-                    <option value="15">SEAT</option>
-                    <option value="16">Skoda</option>
-                    <option value="17">Suzuki</option>
-                    <option value="18">Tesla</option>
-                    <option value="19">Toyota</option>
-                    </select>
-            </div>
-        </div>
-    <!--Рік випуску-->
-        <div>
-            <hr>
-            <section>
-                <h2>Рік випуску</h2>
-                <div>
-                    <label for="at_year-from"></label>
-                    <input type="number" id="at_year-from" placeholder="Від">
-                    <label for="at_year-to"></label>
-                    <input type="number" id="at_year-to" placeholder="До">
-                </div>
-            </section>
-        </div>
-    <!--Вартість-->
-        <div>
-            <hr>
-            <section>
-                <h2>Вартість</h2>
-            <!--Ціна-->
-                <div>
-                    <div>
-                    <input type="number" id="at_price-from" placeholder="Від">
-                    <input type="number" id="at_price-to" placeholder="До">
-                    </div>
-                <!--Валюта-->
-                    <div>
-                    <select name="currency" id="currency">
-                    <option value="USD" selected="selected">$</option>
-                    <option value="EUR">€</option>
-                    <option value="UAH">грн.</option>
-                    </select>
-                    </div>
-                </div>
-            <!--Варіанти оплати-->
-                <div>
-                    <div>
-                        <input type="checkbox" name="pdv" id="pdv" checked="checked">
-                        <label for="pdv">Ціна з ПДВ</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" name="auction" id="auction" checked="checked">
-                        <label for="auction">Можливий торг</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" value="1" name="post.exchanges.type.id" id="post.exchanges.type.id-1">
-                        <label for="post.exchanges.type.id-1">Можливий обмін на автомобіль</label>
-                    </div>
-                    <div>
-                        <input type="checkbox" value="0" name="installment" id="installment" checked="checked">
-                        <label for="installment">Можлива оплата частинами</label>
-                    </div>
-                </div>
-            </section>
-        </div>    
-    <!--Вибір області-->        
-        <div>
-            <hr>
-            <section>
-            <h2>Область</h2>
-            <!--Північ-->
-                <div>
-                    <label>Північ</label>
-                    <br>
-                        <input id="region-10" type="checkbox">
-                        <label for="region-10">Київська</label>
-                    <br>
-                        <input id="region-2" type="checkbox">
-                        <label for="region-2">Житомирська</label>
-                    <br>
-                        <input id="region-8" type="checkbox">
-                         <label for="region-8">Сумська</label>
-                    <br>
-                        <input id="region-6" type="checkbox">
-                        <label for="region-6">Чернігівська</label>
-                </div>
-            <!--Центр-->
-                <div>
-                    <label>Центр</label>
-                        <br>
-                            <input id="region-1" type="checkbox">
-                            <label for="region-1">Вінницька</label>
-                        <br>
-                            <input id="region-16" type="checkbox">
-                            <label for="region-16">Кіровоградська</label>
-                        <br>
-                            <input id="region-20" type="checkbox">
-                            <label for="region-20">Полтавська</label>
-                        <br>
-                            <input id="region-24" type="checkbox">
-                            <label for="region-24">Черкаська</label>
-                </div>
-            <!--Захід-->
-                <div>
-                    <label>Захід</label>
-                        <br>
-                            <input id="region-5" type="checkbox">
-                            <label for="region-5">Львівська</label>
-                        <br>
-                            <input id="region-18" type="checkbox">
-                            <label for="region-18">Волинська</label>
-                        <br>    
-                            <input id="region-22" type="checkbox">
-                            <label for="region-22">Закарпатська</label>
-                        <br>
-                            <input id="region-15" type="checkbox">
-                            <label for="region-15">Івано-Франківська</label>
-                        <br>
-                            <input id="region-4" type="checkbox">
-                            <label for="region-4">Хмельницька</label>
-                        <br>
-                            <input id="region-9" type="checkbox">
-                            <label for="region-9">Рівненська</label>
-                        <br>
-                            <input id="region-3" type="checkbox">
-                            <label for="region-3">Тернопільська</label>
-                        <br>
-                            <input id="region-25" type="checkbox">
-                            <label for="region-25">Чернівецька</label>
-                </div>
-            <!--Схід-->
-                <div>
-                    <label>Схід</label>    
-                        <br>
-                            <input id="region-11" type="checkbox">
-                            <label for="region-11">Дніпропетровська</label>
-                        <br>
-                            <input id="region-7" type="checkbox">
-                            <label for="region-7">Харківська</label>
-                        <br>
-                            <input id="region-13" type="checkbox">
-                            <label for="region-13">Донецька</label>
-                        <br>
-                            <input id="region-14" type="checkbox">
-                            <label for="region-14">Запорізька</label>
-                        <br>
-                            <input id="region-17" type="checkbox">
-                            <label for="region-17">Луганська</label>
-                </div>
-            <!--Південь-->
-                <div>
-                    <label>Південь</label>
-                        <br>
-                            <input id="region-23" type="checkbox">
-                            <label for="region-23">Херсонська</label>
-                        <br>
-                           <input id="region-19" type="checkbox">
-                            <label for="region-19">Миколаївська</label>
-                        <br>
-                            <input id="region-12" type="checkbox">
-                            <label for="region-12">Одеська</label>
-                </div>
-            </section>
-        </div>
-    <!--ДТП-->
-        <div>
-        <hr>
+      </div>
+      <!--Рік випуску-->
+      <div>
+        <hr />
         <section>
-        <h2>Стан</h2>
-            <div>
-                <label>Участь в ДТП</label>
-                <div>
-                    <select name="damage">
-                    <option value="-1" selected="selected">Не задано</option>
-                    <option value="1">Не був у ДТП</option>
-                    <option value="0">Був у ДТП</option>
-                    </select>
-                </div>
-            </div>
+          <h2>Рік випуску</h2>
+          <div>
+            <label for="at_year-from"></label>
+            <input type="number" id="at_year-from" placeholder="Від" />
+            <label for="at_year-to"></label>
+            <input type="number" id="at_year-to" placeholder="До" />
+          </div>
         </section>
-        </div>
-    <!--Технічні характеристики-->
-        <div>
-        <hr>
+      </div>
+      <!--Вартість-->
+      <div>
+        <hr />
         <section>
-            <h2>Технічні характеристики</h2>
-    <!--Паливо-->
+          <h2>Вартість</h2>
+          <!--Ціна-->
+          <div>
             <div>
+              <input type="number" id="at_price-from" placeholder="Від" />
+              <input type="number" id="at_price-to" placeholder="До" />
+            </div>
+            <!--Валюта-->
+            <div>
+              <select name="currency" id="currency">
+                <option value="USD" selected="selected">$</option>
+                <option value="EUR">€</option>
+                <option value="UAH">грн.</option>
+              </select>
+            </div>
+          </div>
+          <!--Варіанти оплати-->
+          <div>
+            <div>
+              <input type="checkbox" name="pdv" id="pdv" checked="checked" />
+              <label for="pdv">Ціна з ПДВ</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                name="auction"
+                id="auction"
+                checked="checked"
+              />
+              <label for="auction">Можливий торг</label>
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                value="1"
+                name="post.exchanges.type.id"
+                id="post.exchanges.type.id-1"
+              />
+              <label for="post.exchanges.type.id-1"
+                >Можливий обмін на автомобіль</label
+              >
+            </div>
+            <div>
+              <input
+                type="checkbox"
+                value="0"
+                name="installment"
+                id="installment"
+                checked="checked"
+              />
+              <label for="installment">Можлива оплата частинами</label>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!--Вибір області-->
+      <div>
+        <hr />
+        <section>
+          <h2>Область</h2>
+          <!--Північ-->
+          <div>
+            <label>Північ</label>
+            <br />
+            <input id="region-10" type="checkbox" />
+            <label for="region-10">Київська</label>
+            <br />
+            <input id="region-2" type="checkbox" />
+            <label for="region-2">Житомирська</label>
+            <br />
+            <input id="region-8" type="checkbox" />
+            <label for="region-8">Сумська</label>
+            <br />
+            <input id="region-6" type="checkbox" />
+            <label for="region-6">Чернігівська</label>
+          </div>
+          <!--Центр-->
+          <div>
+            <label>Центр</label>
+            <br />
+            <input id="region-1" type="checkbox" />
+            <label for="region-1">Вінницька</label>
+            <br />
+            <input id="region-16" type="checkbox" />
+            <label for="region-16">Кіровоградська</label>
+            <br />
+            <input id="region-20" type="checkbox" />
+            <label for="region-20">Полтавська</label>
+            <br />
+            <input id="region-24" type="checkbox" />
+            <label for="region-24">Черкаська</label>
+          </div>
+          <!--Захід-->
+          <div>
+            <label>Захід</label>
+            <br />
+            <input id="region-5" type="checkbox" />
+            <label for="region-5">Львівська</label>
+            <br />
+            <input id="region-18" type="checkbox" />
+            <label for="region-18">Волинська</label>
+            <br />
+            <input id="region-22" type="checkbox" />
+            <label for="region-22">Закарпатська</label>
+            <br />
+            <input id="region-15" type="checkbox" />
+            <label for="region-15">Івано-Франківська</label>
+            <br />
+            <input id="region-4" type="checkbox" />
+            <label for="region-4">Хмельницька</label>
+            <br />
+            <input id="region-9" type="checkbox" />
+            <label for="region-9">Рівненська</label>
+            <br />
+            <input id="region-3" type="checkbox" />
+            <label for="region-3">Тернопільська</label>
+            <br />
+            <input id="region-25" type="checkbox" />
+            <label for="region-25">Чернівецька</label>
+          </div>
+          <!--Схід-->
+          <div>
+            <label>Схід</label>
+            <br />
+            <input id="region-11" type="checkbox" />
+            <label for="region-11">Дніпропетровська</label>
+            <br />
+            <input id="region-7" type="checkbox" />
+            <label for="region-7">Харківська</label>
+            <br />
+            <input id="region-13" type="checkbox" />
+            <label for="region-13">Донецька</label>
+            <br />
+            <input id="region-14" type="checkbox" />
+            <label for="region-14">Запорізька</label>
+            <br />
+            <input id="region-17" type="checkbox" />
+            <label for="region-17">Луганська</label>
+          </div>
+          <!--Південь-->
+          <div>
+            <label>Південь</label>
+            <br />
+            <input id="region-23" type="checkbox" />
+            <label for="region-23">Херсонська</label>
+            <br />
+            <input id="region-19" type="checkbox" />
+            <label for="region-19">Миколаївська</label>
+            <br />
+            <input id="region-12" type="checkbox" />
+            <label for="region-12">Одеська</label>
+          </div>
+        </section>
+      </div>
+      <!--ДТП-->
+      <div>
+        <hr />
+        <section>
+          <h2>Стан</h2>
+          <div>
+            <label>Участь в ДТП</label>
+            <div>
+              <select name="damage">
+                <option value="-1" selected="selected">Не задано</option>
+                <option value="1">Не був у ДТП</option>
+                <option value="0">Був у ДТП</option>
+              </select>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!--Технічні характеристики-->
+      <div>
+        <hr />
+        <section>
+          <h2>Технічні характеристики</h2>
+          <!--Паливо-->
+          <div>
             <label>Паливо</label>
-                <div>
-                <input type="checkbox" name="fuel.id[1]" id="fuel.id[1]" value="1">
-                <label for="fuel.id[1]">Бензин</label>
-                <input type="checkbox" name="fuel.id[2]" id="fuel.id[2]" value="2">
-                <label for="fuel.id[2]">Дизель</label>
-                <input type="checkbox" name="fuel.id[3]" id="fuel.id[3]" value="3">               
-                <label for="fuel.id[3]">Газ</label>
-                <input type="checkbox" name="fuel.id[4]" id="fuel.id[4]" value="4">
-                <label for="fuel.id[4]">Газ / Бензин</label>
-                <input type="checkbox" name="fuel.id[5]" id="fuel.id[5]" value="5">
-                <label for="fuel.id[5]">Гібрид</label>
-                <input type="checkbox" name="fuel.id[6]" id="fuel.id[6]" value="6">
-                <label for="fuel.id[6]">Електро</label>
-                <input type="checkbox" name="fuel.id[7]" id="fuel.id[7]" value="7">
-                <label for="fuel.id[7]">Інше</label>
-                <input type="checkbox" name="fuel.id[8]" id="fuel.id[8]" value="8">
-                <label for="fuel.id[8]">Газ метан</label>
-                <input type="checkbox" name="fuel.id[9]" id="fuel.id[9]" value="9">
-                <label for="fuel.id[9]">Газ пропан-бутан</label>
-                </div>
-            </div>
-    <!--КПП-->
             <div>
+              <input
+                type="checkbox"
+                name="fuel.id[1]"
+                id="fuel.id[1]"
+                value="1"
+              />
+              <label for="fuel.id[1]">Бензин</label>
+              <input
+                type="checkbox"
+                name="fuel.id[2]"
+                id="fuel.id[2]"
+                value="2"
+              />
+              <label for="fuel.id[2]">Дизель</label>
+              <input
+                type="checkbox"
+                name="fuel.id[3]"
+                id="fuel.id[3]"
+                value="3"
+              />
+              <label for="fuel.id[3]">Газ</label>
+              <input
+                type="checkbox"
+                name="fuel.id[4]"
+                id="fuel.id[4]"
+                value="4"
+              />
+              <label for="fuel.id[4]">Газ / Бензин</label>
+              <input
+                type="checkbox"
+                name="fuel.id[5]"
+                id="fuel.id[5]"
+                value="5"
+              />
+              <label for="fuel.id[5]">Гібрид</label>
+              <input
+                type="checkbox"
+                name="fuel.id[6]"
+                id="fuel.id[6]"
+                value="6"
+              />
+              <label for="fuel.id[6]">Електро</label>
+              <input
+                type="checkbox"
+                name="fuel.id[7]"
+                id="fuel.id[7]"
+                value="7"
+              />
+              <label for="fuel.id[7]">Інше</label>
+              <input
+                type="checkbox"
+                name="fuel.id[8]"
+                id="fuel.id[8]"
+                value="8"
+              />
+              <label for="fuel.id[8]">Газ метан</label>
+              <input
+                type="checkbox"
+                name="fuel.id[9]"
+                id="fuel.id[9]"
+                value="9"
+              />
+              <label for="fuel.id[9]">Газ пропан-бутан</label>
+            </div>
+          </div>
+          <!--КПП-->
+          <div>
             <label>КПП</label>
-                <div>
-                <input type="checkbox" name="gearbox.id[1]" id="gearbox.id[1]" value="1">
-                <label for="gearbox.id[1]">Ручна / Механіка</label>
-                <input type="checkbox" name="gearbox.id[2]" id="gearbox.id[2]" value="2">
-                <label for="gearbox.id[2]">Автомат</label>
-                <input type="checkbox" name="gearbox.id[3]" id="gearbox.id[3]" value="3">
-                <label for="gearbox.id[3]">Типтронік</label>
-                <input type="checkbox" name="gearbox.id[4]" id="gearbox.id[4]" value="4">
-                <label for="gearbox.id[4]">Робот</label>
-                <input type="checkbox" name="gearbox.id[5]" id="gearbox.id[5]" value="5">
-                <label for="gearbox.id[5]">Варіатор</label>
-                </div>
-            </div>
-    <!--Тип приводу-->
             <div>
+              <input
+                type="checkbox"
+                name="gearbox.id[1]"
+                id="gearbox.id[1]"
+                value="1"
+              />
+              <label for="gearbox.id[1]">Ручна / Механіка</label>
+              <input
+                type="checkbox"
+                name="gearbox.id[2]"
+                id="gearbox.id[2]"
+                value="2"
+              />
+              <label for="gearbox.id[2]">Автомат</label>
+              <input
+                type="checkbox"
+                name="gearbox.id[3]"
+                id="gearbox.id[3]"
+                value="3"
+              />
+              <label for="gearbox.id[3]">Типтронік</label>
+              <input
+                type="checkbox"
+                name="gearbox.id[4]"
+                id="gearbox.id[4]"
+                value="4"
+              />
+              <label for="gearbox.id[4]">Робот</label>
+              <input
+                type="checkbox"
+                name="gearbox.id[5]"
+                id="gearbox.id[5]"
+                value="5"
+              />
+              <label for="gearbox.id[5]">Варіатор</label>
+            </div>
+          </div>
+          <!--Тип приводу-->
+          <div>
             <label>Тип приводу</label>
-                <div>
-                <input type="checkbox" name="drive.id[1]" id="drive.id[1]" value="1">
-                <label for="drive.id[1]">Повний</label>
-                <input type="checkbox" name="drive.id[2]" id="drive.id[2]" value="2">
-                <label for="drive.id[2]">Передній</label>
-                <input type="checkbox" name="drive.id[3]" id="drive.id[3]" value="3">
-                <label for="drive.id[3]">Задній</label>
-                </div>
-            </div>
-    <!--Колір-->
             <div>
-                <label>Колір</label>
-                <div>
-                    <input type="color">
-                </div>
+              <input
+                type="checkbox"
+                name="drive.id[1]"
+                id="drive.id[1]"
+                value="1"
+              />
+              <label for="drive.id[1]">Повний</label>
+              <input
+                type="checkbox"
+                name="drive.id[2]"
+                id="drive.id[2]"
+                value="2"
+              />
+              <label for="drive.id[2]">Передній</label>
+              <input
+                type="checkbox"
+                name="drive.id[3]"
+                id="drive.id[3]"
+                value="3"
+              />
+              <label for="drive.id[3]">Задній</label>
             </div>
+          </div>
+          <!--Колір-->
+          <div>
+            <label>Колір</label>
+            <div>
+              <input type="color" />
+            </div>
+          </div>
         </section>
-        </div>
-    <!--Додаткові опції-->
-        <div>
-            <hr>
-            <section>           
-                <h2>Додаткові опції</h2>
-            <!--Фари-->
-                <div>
-                    <label>Фари</label>
-                    <div>
-                        <select name="headlights">
-                        <option value="0" selected="selected">Оберіть</option>
-                        <option value="1">Ксенонові/Біксенонові</option>
-                        <option value="2">Лазерні</option>
-                        <option value="3">Світлодіодні</option>
-                        <option value="4">Матричні</option>
-                        <option value="5">Галогенні</option>
-                        </select>
-                    </div>
-                </div>
-            <!--Матеріали салону-->
-                <div>
-                    <label>Матеріали салону</label>
-                    <div>
-                        <select name="interiorMaterials">
-                        <option value="0" selected="selected">Оберіть</option>
-                        <option value="1">Тканина</option>
-                        <option value="2">Шкіра</option>
-                        <option value="3">Велюр</option>
-                        <option value="4">Комбінований</option>
-                        <option value="5">Штучна шкіра</option>
-                        <option value="6">Алькантара</option>
-                        </select>
-                    </div>
-                </div>
-            <!--Колір салону-->
-                <div>
-                    <label>Колір салону</label>
-                    <div>
-                        <select name="interiorColors">
-                        <option value="0" selected="selected">Оберіть</option>
-                        <option value="1">Світлий</option>
-                        <option value="2">Темний</option>
-                        <option value="3">Коричневий</option>
-                        </select>
-                    </div>
-                </div>
-            <!--Підігрів сидінь-->
-                <div>
-                    <label>Підігрів сидінь</label>
-                    <div>
-                        <select name="seatsHeated">
-                        <option value="0" selected="selected">Оберіть</option>
-                        <option value="1">Передні сидіння</option>
-                        <option value="2">Передні та задні сидіння</option>
-                        </select>
-                    </div>
-                </div>
-            <!--Склопідйомники-->
-                <div>
-                    <label>Електросклопідйомники</label>
-                    <div>
-                        <select name="windowLifter">
-                        <option value="0" selected="selected">Оберіть</option>
-                        <option value="1">Передні</option>
-                        <option value="2">Передні та задні</option>
-                        </select>
-                    </div>
-                </div>
-            <!--Кондиціонер-->
-                <div>
-                    <label>Кондиціонер</label>
-                    <div>
-                        <select name="conditioner">
-                        <option value="0" selected="selected">Оберіть</option>
-                        <option value="1">Кондиціонер</option>
-                        <option value="2">Клімат-контроль 1-зонний</option>
-                        <option value="3">Клімат-контроль 2-зонний</option>
-                        <option value="4">Клімат-контроль багатозонний</option>
-                        </select>
-                    </div>
-                </div>
-            <!--Кермо-->
-                <div>
-                    <label>Підсилювач керма</label>
-                    <div>
-                        <select name="powerSteering">
-                        <option value="0" selected="selected">Оберіть</option>
-                        <option value="1">Гідро</option>
-                        <option value="2">Електро</option>
-                        </select>
-                    </div>
-                </div>
-            </section>
-        </div>
-    <!--Кнопка-->
-        <div>
-        <hr>
+      </div>
+      <!--Додаткові опції-->
+      <div>
+        <hr />
+        <section>
+          <h2>Додаткові опції</h2>
+          <!--Фари-->
+          <div>
+            <label>Фари</label>
+            <div>
+              <select name="headlights">
+                <option value="0" selected="selected">Оберіть</option>
+                <option value="1">Ксенонові/Біксенонові</option>
+                <option value="2">Лазерні</option>
+                <option value="3">Світлодіодні</option>
+                <option value="4">Матричні</option>
+                <option value="5">Галогенні</option>
+              </select>
+            </div>
+          </div>
+          <!--Матеріали салону-->
+          <div>
+            <label>Матеріали салону</label>
+            <div>
+              <select name="interiorMaterials">
+                <option value="0" selected="selected">Оберіть</option>
+                <option value="1">Тканина</option>
+                <option value="2">Шкіра</option>
+                <option value="3">Велюр</option>
+                <option value="4">Комбінований</option>
+                <option value="5">Штучна шкіра</option>
+                <option value="6">Алькантара</option>
+              </select>
+            </div>
+          </div>
+          <!--Колір салону-->
+          <div>
+            <label>Колір салону</label>
+            <div>
+              <select name="interiorColors">
+                <option value="0" selected="selected">Оберіть</option>
+                <option value="1">Світлий</option>
+                <option value="2">Темний</option>
+                <option value="3">Коричневий</option>
+              </select>
+            </div>
+          </div>
+          <!--Підігрів сидінь-->
+          <div>
+            <label>Підігрів сидінь</label>
+            <div>
+              <select name="seatsHeated">
+                <option value="0" selected="selected">Оберіть</option>
+                <option value="1">Передні сидіння</option>
+                <option value="2">Передні та задні сидіння</option>
+              </select>
+            </div>
+          </div>
+          <!--Склопідйомники-->
+          <div>
+            <label>Електросклопідйомники</label>
+            <div>
+              <select name="windowLifter">
+                <option value="0" selected="selected">Оберіть</option>
+                <option value="1">Передні</option>
+                <option value="2">Передні та задні</option>
+              </select>
+            </div>
+          </div>
+          <!--Кондиціонер-->
+          <div>
+            <label>Кондиціонер</label>
+            <div>
+              <select name="conditioner">
+                <option value="0" selected="selected">Оберіть</option>
+                <option value="1">Кондиціонер</option>
+                <option value="2">Клімат-контроль 1-зонний</option>
+                <option value="3">Клімат-контроль 2-зонний</option>
+                <option value="4">Клімат-контроль багатозонний</option>
+              </select>
+            </div>
+          </div>
+          <!--Кермо-->
+          <div>
+            <label>Підсилювач керма</label>
+            <div>
+              <select name="powerSteering">
+                <option value="0" selected="selected">Оберіть</option>
+                <option value="1">Гідро</option>
+                <option value="2">Електро</option>
+              </select>
+            </div>
+          </div>
+        </section>
+      </div>
+      <!--Кнопка-->
+      <div>
+        <hr />
         <button type="submit">Пошук</button>
-        </div>
+      </div>
     </form>
-		
-</body>
+  </body>
 </html>

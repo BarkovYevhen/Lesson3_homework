@@ -1,48 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Registration</title>
-</head>
-<body>
+  </head>
+  <body>
     <header>
-        <h1>Реєстрація</h1>
+      <h1>Реєстрація</h1>
     </header>
 
     <div>
-        <form action="https://fom.in.ua/echo">
-            <label for="name">Вкажіть ваше ім'я
-                <input type="text" name="name" id="name" pattern="[A-Za-z0-9]{6,}" 
-                title="Ім'я не может бути меншим за 6 латинських символів." required>
-            </label>
-            <br>
-            <label for="userPhone">Номер телефону
-                <input type="tel" name="userPhone" id="userPhone" pattern="+38[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}"
-                title="Номер має бути введений в флрматі +38000-000-00-00"
-                required>
-            </label>
-            <br>
-            <label for="email">Електронна скринька
-                <input type="email" name="email" id="email" required>
-            </label>
-            <br>
-            <label for="userPassword"> Придумайте пароль
-                <input type="password" name="userPassword" id="userPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                title="Пароль не може бути меншим за вісім символів і має містити хоча б одну цифру, одну маленьку та одну велику латинську літеру."
-                required>
-            </label>
-            <br>
-            <label for="confirmUserPassword"> Повторіть пароль
-                <input type="password" name="confirmUserPassword" id="confirmUserPassword" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
-                title="Пароль не може бути меншим за вісім символів і має містити хоча б одну цифру, одну маленьку та одну велику латинську літеру."
-                required>
-            </label>
-            <br>
-            <button type="submit">Прийняти</button>
-        </form>
+      <form action="https://fom.in.ua/echo">
+        <label for="name"
+          >Вкажіть ваше ім'я
+          <input
+            type="text"
+            name="name"
+            id="name"
+            pattern="[A-Za-z0-9]{6,}"
+            title="Ім'я не может бути меншим за 6 латинських символів."
+            required
+          />
+        </label>
+        <br />
+        <label for="userPhone"
+          >Номер телефону
+          <input
+            type="tel"
+            name="userPhone"
+            id="userPhone"
+            pattern="+38[0-9]{3}-[0-9]{3}-[0-9]{2}-[0-9]{2}"
+            title="Номер має бути введений в флрматі +38000-000-00-00"
+            required
+          />
+        </label>
+        <br />
+        <label for="email"
+          >Електронна скринька
+          <input type="email" name="email" id="email" required />
+        </label>
+        <br />
+        <label for="userPassword">
+          Придумайте пароль
+          <input
+            type="password"
+            name="userPassword"
+            id="userPassword"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            title="Пароль не може бути меншим за вісім символів і має містити хоча б одну цифру, одну маленьку та одну велику латинську літеру."
+            required
+          />
+        </label>
+        <br />
+        <label for="confirmUserPassword">
+          Повторіть пароль
+          <input
+            type="password"
+            name="confirmUserPassword"
+            id="confirmUserPassword"
+            pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}"
+            title="Пароль не може бути меншим за вісім символів і має містити хоча б одну цифру, одну маленьку та одну велику латинську літеру."
+            required
+          />
+        </label>
+        <br />
+        <button type="submit">Прийняти</button>
+      </form>
     </div>
-
-</body>
+  </body>
 </html>
